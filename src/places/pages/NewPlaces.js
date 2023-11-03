@@ -59,39 +59,39 @@ const NewPlaces = () => {
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
-      <form className='place-form' onSubmit={placesubmitInputHandler}>
+      <form className="place-form" onSubmit={placesubmitInputHandler}>
         {isLoading && <LoadingSpinner asOverlay />}
         <Input
-          id='title'
-          element='input'
-          type='text'
-          label='Title'
+          id="title"
+          element="input"
+          type="text"
+          label="Title"
           validators={[VALIDATOR_REQUIRE()]}
-          errorText='Please enter a valid title'
+          errorText="Please enter a valid title"
           onInput={inputHandler}
         />
         <Input
-          id='description'
-          element='textarea'
-          label='Description'
+          id="description"
+          element="textarea"
+          label="Description"
           validators={[VALIDATOR_MINLENGTH(5)]}
-          errorText='Please enter a valid description of minimum 5 letters'
+          errorText="Please enter a valid description of minimum 5 letters"
           onInput={inputHandler}
         />
         <Input
-          id='address'
-          element='input'
-          label='Address'
+          id="address"
+          element="input"
+          label="Address"
           validators={[VALIDATOR_REQUIRE()]}
-          errorText='Please enter a valid address'
+          errorText="Please enter a valid address"
           onInput={inputHandler}
         />
         <ImageUpload
-          id='image'
+          id="image"
           onInput={inputHandler}
-          errorText='Please provide an image'
+          errorText="Please provide an image"
         />
-        <Button type='submit' disabled={!formState.isValid}>
+        <Button type="submit" disabled={!formState.isValid}>
           Add Place
         </Button>
       </form>
